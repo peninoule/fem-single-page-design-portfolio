@@ -619,14 +619,14 @@ body {
 }
 @media (min-width: calc(70em + 1px)) {
   .work__title {
-    font-size: var(--fs-500);
-    line-height: calc(var(--lh-550) + 0.125rem);
+    font-size: var(--fs-600);
+    line-height: var(--lh-700);
   }
 }
 @media (min-width: 48em) and (max-width: 70em) {
   .work__title {
-    font-size: var(--fs-500);
-    line-height: calc(var(--lh-550) + 0.125rem);
+    font-size: var(--fs-600);
+    line-height: var(--lh-700);
   }
 }
 

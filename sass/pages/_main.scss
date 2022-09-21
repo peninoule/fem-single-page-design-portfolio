@@ -80,6 +80,9 @@
             $fw: var(--fw-700),
             $lh: calc(var(--lh-550) + 0.125rem),
             $clr: u.$clr-neutral-900,
+            //responsive typos
+            $tab-fs: var(--fs-600),
+            $tab-lh: var(--lh-700)
         )
     }
 }
