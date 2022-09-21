@@ -1,0 +1,16 @@
+{
+  "name": "base",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./style.css",
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.54.9",
+    "vite": "^3.1.0"
+  }
+}

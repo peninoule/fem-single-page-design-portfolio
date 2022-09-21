@@ -1,0 +1,85 @@
+@use '../utils/' as u;
+
+.main {
+    @extend %flex-column-center;
+    text-align: center;
+    @include u.pm-block(margin, 
+        $top: 2rem, $bottom: 2rem,
+        $tab-top: 4rem, $tab-bottom: 4rem,
+        $desk-top: 4.125rem, $desk-bottom: 5rem);
+
+    &__title {
+        @include u.typography(
+            $fs: var(--fs-650),
+            $fw: var(--fw-700),
+            $lh: var(--lh-750),
+            $clr: u.$clr-neutral-900,
+            // responsive typos
+            $tab-fs: var(--fs-750),
+            $tab-lh: var(--lh-900),
+            $desk-fs: var(--fs-900),
+            $desk-lh: var(--lh-1k1),
+        );
+    @include u.pm-block(padding,
+        $top: 0, $bottom: 1rem,
+        $tab-bottom: 1.6875rem,
+        $desk-bottom: 1.5rem, 
+    );
+    }
+    &__body {
+        @include u.typography(
+            $fs: var(--fs-400),
+            $fw: var(--fw-500),
+            $lh: var(--lh-525),
+            $clr: u.$clr-neutral-500,
+            // responsive typos
+            $tab-fs: var(--fs-450),
+            $tab-lh: var(--lh-550)
+        );
+    max-width: 24ch;
+    @include u.tablet {
+        max-width: 45ch;
+    };
+    @include u.desktop {
+        max-width: 55ch;
+    } 
+    }
+}
+
+.hero {
+    @extend %flex-column-center;
+    @include u.pm-block(margin,
+        $top: 6.25rem,
+        $tab-top: 7.5rem, $tab-bottom: 7.5rem,
+        $desk-top: 8.5rem, $desk-bottom: 5.5rem);
+    @include u.media(tablet, desktop) {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+    }
+    &__img {
+        @include u.pm-block(padding,
+            $top: 0, $bottom: 2.5rem,
+            $tab-bottom: 0);
+        @include u.tablet {
+            position: relative;
+            left: -20%;
+        }
+        @include u.desktop {
+            max-width: 80%;
+        }
+        align-self: center;
+    }
+}
+
+.work {
+    @extend %flex-column-center;
+    &__title {
+        @include u.typography (
+            $fs: var(--fs-500),
+            $fw: var(--fw-700),
+            $lh: calc(var(--lh-550) + 0.125rem),
+            $clr: u.$clr-neutral-900,
+        )
+    }
+}

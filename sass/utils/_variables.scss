@@ -1,0 +1,114 @@
+@use "sass:string";
+
+$ff-primary: 'Plus Jakarta Sans', sans-serif;
+
+// Looping through to create custom properties of font-size, line-height and font-weight
+$base-size: 1rem;
+
+$sizes : (
+    "size-100": $base-size * 0.25, // 4px
+    "size-200": $base-size * 0.5,  // 8px
+    "size-300": $base-size * 0.75, // 12px
+    "size-350": $base-size * 0.875,// 14px
+    "size-400": $base-size * 1,    // 16px
+    "size-450": $base-size * 1.125,// 18px
+    "size-500": $base-size * 1.5,  // 24px
+    "size-525": $base-size * 1.625,// 26px
+    "size-550": $base-size * 1.75, // 28px
+    "size-600": $base-size * 2,    // 32px
+    "size-650": $base-size * 2.25, // 36px
+    "size-700": $base-size * 2.5,  // 40px
+    "size-750": $base-size * 2.75, // 44px
+    "size-800": $base-size * 3,    // 48px
+    "size-900": $base-size * 3.5,  // 56px
+    "size-1k1": $base-size * 4.375,// 70px
+);
+
+$weights: (200 400 500 600 700 900);
+
+:root {
+    @each $size-number, $value in $sizes {
+        $number: string.slice($size-number, 6); 
+        --fs-#{$number}: #{$value};
+        --lh-#{$number}: #{$value};
+    }
+    @each $weight in $weights {
+        --fw-#{$weight}: #{$weight};
+    }
+}
+
+// breakpoints
+$desktop: 70em;
+$tablet: 48em;
+
+// colors
+$clr-primary-700: hsl(314, 45%, 23%);
+$clr-primary-500: hsl(7, 77%, 66%);
+$clr-primary-200: hsl(28, 89%, 67%);
+$clr-primary-100: hsl(28, 100%, 97%);
+
+$clr-accent-700: hsl(252, 66%, 62%);
+$clr-accent-500: hsl(0, 78%, 79%);
+$clr-accent-200: hsl(172, 46%, 57%);
+
+$clr-neutral-900: hsl(0, 0%, 1%);
+$clr-neutral-500: hsl(30, 5%, 45%);
+$clr-neutral-100: hsl(28, 100%, 97%);
+
+// btn-colors map
+$btn-colors: (
+    "dark": (
+        "primary": $clr-neutral-900,
+        "accent": $clr-accent-700,
+    ),
+    "orange": (
+        "primary": $clr-primary-500,
+        "accent": $clr-primary-200,
+    )
+);
+
+// card layout
+$card-layout: (
+    'graphic': (
+        'bg-clr': $clr-accent-700,
+        'col': g1,
+        'row': g1 / g2,
+        'width': 128px,
+        "height": 192px,
+    ),
+    'ui': (
+        'bg-clr': $clr-primary-200,
+        'col': u1,
+        'row': u1,
+        'width': 64px,
+        "height": 64px,
+    ),
+    'apps': (
+        'bg-clr': $clr-accent-500,
+        'col': a1,
+        'row': a1,
+        'width': 64px,
+        "height": 64px,
+    ),
+    'illu': (
+        'bg-clr': $clr-primary-500,
+        'col': i1,
+        'row': i1, 
+        'width': 128px,
+        "height": 64px,
+    ),
+    'photo': (
+        'bg-clr': $clr-accent-200,
+        'col': p1,
+        'row': p1, 
+        'width': 128px,
+        "height": 64px,
+    ),
+    'motion': (
+        'bg-clr': $clr-primary-700,
+        'col': m1,
+        'row': m1, 
+        'width': 128px,
+        "height": 64px,
+    ),
+)

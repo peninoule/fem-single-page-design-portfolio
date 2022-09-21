@@ -1,0 +1,73 @@
+@use '../utils/' as u;
+
+.cta {
+    @extend %flex-column-center;
+    justify-content: center;
+    text-align: center;
+    &:not(.cta--dark) {
+        @include u.media(tablet, desktop) {
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+        };
+        max-width: 50ch;
+        @include u.desktop {
+            max-width: 67ch;
+            margin-inline: auto;
+        };
+    };
+    &__title {
+        @include u.typography(
+            $fs: var(--fs-525),
+            $fw: var(--fw-700),
+            $lh: var(--lh-600),
+            $clr: u.$clr-neutral-900,
+            // responsive typos
+            $tab-fs: var(--fs-600),
+            $tab-lh: var(--lh-700),
+            $desk-fs: var(--fs-700),
+            $desk-lh: calc(var(--lh-800) + 0.125rem),
+        );
+        &--light {
+            color: u.$clr-neutral-100;
+        }
+    }
+    &__body {
+        grid-area: title;
+        @include u.typography(
+            $fs: var(--fs-400),
+            $fw: var(--fw-500),
+            $lh: var(--lh-525),
+            $clr: u.$clr-neutral-500,
+            //responsive typos
+            $tab-fs: var(--fs-450),
+            $tab-lh: var(--lh-550)
+        );
+        @include u.pm-block(padding,
+            $top: 1.5rem,
+            $desk-top: 2.125rem, $desk-bottom: 2rem);
+        &--light {
+            color: u.$clr-neutral-100;
+            max-width: 25ch;
+            @include u.media (tablet, desktop) {
+                max-width: 42ch;
+            }
+        }
+    }
+    &__content {
+        text-align: left;
+    }
+    &--dark {
+        background-color: u.$clr-neutral-900;
+        border-radius: 10px;
+        @include u.pm-block(margin,
+            $top: 9.3125rem, $bottom: 2.5rem,
+            $tab-top: 7.5rem, $tab-bottom: 4rem);
+        @include u.pm-block(padding,
+            $top: 3rem);
+        @include u.desktop {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+}

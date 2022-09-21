@@ -1,0 +1,8 @@
+@use '../utils/' as u;
+
+@media (max-width: u.$tablet) {
+    .logo {
+        width: 48px;
+        height: 48px;
+    }
+}

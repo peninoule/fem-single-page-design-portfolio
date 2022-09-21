@@ -1,0 +1,12 @@
+@use '../utils/' as u;
+
+.scroll {
+    display: flex;
+    gap: 1rem;
+    &__arrow {
+        background-color: u.$clr-neutral-900;
+        border-radius: 100%;
+        padding: 1.5rem;
+        @include u.hover(u.$clr-accent-700);
+    }
+}

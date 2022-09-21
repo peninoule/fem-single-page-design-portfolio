@@ -1,0 +1,113 @@
+@use './variables.scss' as v;
+
+@mixin tablet {
+    @media (min-width: v.$tablet) and (max-width: v.$desktop) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: calc(v.$desktop + 1px)) {
+        @content;
+    }
+}
+
+@mixin media($types...) {
+    @each $type in $types {
+        @if $type == tablet {
+            @include tablet {
+                @content;
+            }
+        } @else if $type == desktop {
+            @include desktop {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin typography ($fs, $tab-fs: $fs, $desk-fs: $tab-fs, 
+                   $lh ,$tab-lh: $lh, $desk-lh: $tab-lh, 
+                   $fw, $clr
+                   ) {
+    font-family: v.$ff-primary;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+    color: $clr;
+    @include desktop {
+        font-size: $desk-fs;
+        line-height: $desk-lh;
+    }
+    @include tablet {
+        font-size: $tab-fs;
+        line-height: $tab-lh;
+    }
+}
+
+// pm => Padding, margin
+@mixin pm-block($pm, $top, $bottom: $top,
+                     $tab-top: $top, $tab-bottom: $bottom,
+                     $desk-top: $tab-top, $desk-bottom: $tab-bottom,
+                     ) {
+    #{$pm}-block: $top $bottom;
+    @include desktop {
+        #{$pm}-block: $desk-top $desk-bottom;
+    }
+    @include tablet {
+        #{$pm}-block: $tab-top $tab-bottom;
+    }
+}
+
+@mixin pm-inline($pm, $left, $right: $left,
+                     $tab-left: $left, $tab-right: $tab-left,
+                     $desk-left: $tab-left, $desk-right: $desk-left,
+                     ) {
+    #{$pm}-inline: $left $right;
+    @include desktop {
+        #{$pm}-inline: $desk-left $desk-right;
+    }
+    @include tablet {
+        #{$pm}-inline: $tab-left $tab-right;
+    }
+}
+
+@mixin hover($clr) {
+    @media (hover: hover) {
+        &:hover {
+            cursor: pointer;
+            background-color: $clr;
+        }
+    }
+}
+
+@mixin btn-colors($map) {
+    @each $name, $colors in $map {
+        $primary: map-get($colors, 'primary');
+        $accent: map-get($colors, 'accent');
+        &--#{$name} {
+            background-color: $primary;
+            @include hover($accent);
+        }
+    }
+}
+
+@mixin card-layout($map) {
+    @each $name, $properties in $map {
+        $bg-clr: map-get($properties, 'bg-clr');
+        $col: map-get($properties, 'col');
+        $row: map-get($properties, 'row');
+        $width: map-get($properties, 'width');
+        $height: map-get($properties, 'height');
+        &--#{$name} {
+            background-color: $bg-clr;
+            grid-column: $col;
+            grid-row: $row;
+            &> img {
+                //width: $width;
+                //height: $height;
+                align-self: flex-end;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@use '../utils/' as u;
+
+body {
+    overflow-x: hidden;
+    height: 100vh;
+    @include u.pm-block(margin,
+                        $top: 1rem, $bottom: 1rem,
+                        $tab-top: 2.125rem, $tab-bottom: 3.5rem,
+                        $desk-bottom: 4rem);
+    @include u.pm-inline(margin,
+                         1rem,
+                         $tab-left: 2.5rem,
+                         $desk-left: 10.25rem);
+    background-color: u.$clr-primary-100;                         
+}

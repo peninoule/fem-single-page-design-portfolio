@@ -1,0 +1,42 @@
+@use '../utils/' as u;
+
+.cards {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-areas: 
+        "g1 g1"
+        "g2 g2"
+        "u1 a1"
+        "i1 i1"
+        "p1 p1"
+        "m1 m1";
+    @include u.tablet {
+        grid-template-areas:
+            "g1 g1 g1 u1 a1"
+            "g2 g2 g2 i1 i1"
+            "p1 p1 p1 m1 m1"
+    };
+    @include u.desktop {
+        grid-template-areas: 
+            "g1 g1 u1 a1 p1 p1"
+            "g2 g2 i1 i1 m1 m1";
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    gap: 24px;
+    border-radius: 10px;
+    padding: 24px;
+    @include u.card-layout(u.$card-layout);
+    &__title {
+        font-family: u.$ff-primary;
+        font-size: var(--fs-500);
+        font-weight: var(--fw-700);
+        line-height: 30.24px;
+        color: u.$clr-neutral-100;
+        &--big {padding-top: 4.5rem;}
+    }
+}

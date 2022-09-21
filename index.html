@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	  <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet"> 
+    <title>Single Page Design portfolio</title>
+  </head>
+    
+  <body>
+    <header class="header">
+      <img src="/public/logo.svg" alt="Logo" class="logo">
+      <button class="btn btn--dark">Free Consultation</button>
+    </header>
+
+    <main>
+      <section>
+        <article class="main">
+          <h1 class="main__title">Design solutions made easy</h1>
+          <p class="main__body">With over ten years of experience in various design disciplines, I’m your one-stop shop for your design needs.</p>
+        </article>
+        <article class="cards">
+          <article class="card card--graphic">
+            <h1 class="card__title card__title--big">Graphic Design</h1>
+            <img src="/public/pattern-graphic-design.svg" alt="Pattern Design" class="card__img">
+          </article>
+          <article class="card card--ui">
+            <h1 class="card__title">UI/UX</h1>
+            <img src="/public/pattern-ui-ux.svg" alt="UI /UX" class="card__img">
+          </article>
+          <article class="card card--apps">
+            <h1 class="card__title">Apps</h1>
+            <img src="/public/pattern-apps.svg" alt="Apps" class="card__img">
+          </article>
+          <article class="card card--illu">
+            <h1 class="card__title">Illustrations</h1>
+            <img src="/public/pattern-illustrations.svg" alt="Illustrations" class="card__img">
+          </article>
+          <article class="card card--photo">
+            <h1 class="card__title">Photography</h1>
+            <img src="/public/pattern-photography.svg" alt="Photography" class="card__img">
+          </article>
+          <article class="card card--motion">
+            <h1 class="card__title">Motion Graphics</h1>
+            <img src="/public/pattern-motion-graphics.svg" alt="Motion Grpahics" class="card__img">
+          </article>
+        </article>
+      </section>
+
+      <section class="hero">
+        <img src="/public/image-amy.webp" alt="Icon Amy" class="hero__img">
+        <article class="cta">
+          <h1 class="cta__title">I’m Amy, and I’d love to work on your next project</h1>
+          <p class="cta__body">I love working with others to create beautiful design solutions. I’ve designed everything from brand illustrations to complete mobile apps. I’m also handy with a camera!</p>
+          <button class="btn btn--orange">Free Consultation</button>
+        </article>
+      </section>
+
+      <section class="work">
+        <h1 class="work__title">My Work</h1>
+        <ul class="slider">
+          <li class="slider__card slider__card--active">
+            <img src="/public/image-slide-1.jpg" alt="Image Slide 1">
+          </li>
+          <li class="slider__card">
+            <img src="/public/image-slide-2.jpg" alt="Image Slide 2">
+          </li>
+          <li class="slider__card">
+            <img src="/public/image-slide-3.jpg" alt="Image Slide 3">
+          </li>
+          <li class="slider__card">
+            <img src="/public/image-slide-4.jpg" alt="Image Slide 4">
+          </li>
+          <li class="slider__card">
+            <img src="/public/image-slide-5.jpg" alt="Image Slide 5">
+          </li>
+        </ul>
+
+        <div class="scroll">
+          <img class="scroll__arrow scroll__arrow--left" src="/public/icon-arrow-left.svg" alt="Icon Arrow Left">
+          <img class="scroll__arrow scroll__arrow--right" src="/public/icon-arrow-right.svg" alt="Icon Arrow Right">
+        </div>
+      </section>
+
+        <article class="cta cta--dark">
+          <div class="cta__content">
+            <h1 class="cta__title cta__title--light">Book a call with me</h1>
+            <p class="cta__body cta__body--light">I’d love to have a chat to see how I can help you. The best first step is for us to discuss your project during a free consultation. Then we can move forward from there.</p>
+          </div>
+          <button class="btn btn--orange">Free Consultation</button>
+        </article>
+    </main>
+
+    <footer class="footer">
+      <img src="/public/logo.svg" alt="Logo" class="logo">
+      <button class="btn btn--dark">Free Consultation</button>
+    </footer>
+
+    <script src="/slider.js"></script>
+  </body>
+  </html>

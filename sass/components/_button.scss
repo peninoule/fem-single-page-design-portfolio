@@ -1,0 +1,19 @@
+@use '../utils/' as u;
+
+.btn {
+    border-radius: 100vmax;
+    border: none;
+    padding: 0.5rem 1.75rem;
+    @include u.typography(
+        $fs: var(--fs-350),
+        $fw: var(--fw-700),
+        $lh: var(--lh-550),
+        $clr: u.$clr-neutral-100,
+        // responsive typos
+        $tab-fs: var(--fs-400),
+    );
+    @include u.btn-colors(u.$btn-colors);
+    @include u.media(tablet, desktop) {
+        padding: 0.875rem 2.8125rem;
+    }
+}

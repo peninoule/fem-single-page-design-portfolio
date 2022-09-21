@@ -1,0 +1,9 @@
+@use '../utils/' as u;
+
+.footer {
+    @extend %header;
+    @include u.pm-block(margin,
+        $top: 0, $bottom: 2rem,
+                 $tab-bottom: 3.5rem,
+                 $desk-bottom: 4rem,);
+}
