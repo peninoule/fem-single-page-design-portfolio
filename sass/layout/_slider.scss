@@ -8,24 +8,23 @@
 
     // scrolling
     overflow-x: scroll;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: x mandatory;
     -ms-overflow-style: none;
-    //scrollbar-width: none;
+    scrollbar-width: none;
     transition: transform 250ms ease-in;
     @include u.pm-block (margin,
         $top: 2rem, 
         $tab-top: 3.5rem, $tab-bottom: 3.5rem);
+    @include u.pm-inline (padding,
+        $left: 3rem);
+        
     // disable scrolling bar
     &::-webkit-scrollbar {
         display: none;
     }
     &__card {
-        list-style: none;
         scroll-snap-align: center;
-        &>img {
-            border-radius: 5px;
-            min-width: 72vw;
-            min-height: 31vw;
+        border-radius: 5px;
+        max-width: 72vw;
         }
-    }
 }

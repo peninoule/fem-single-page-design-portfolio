@@ -115,8 +115,6 @@ svg {
 }
 
 body {
-  overflow-x: hidden;
-  height: 100vh;
   margin-block: 1rem 1rem;
   margin-inline: 1rem 1rem;
   background-color: hsl(28deg, 100%, 97%);
@@ -361,10 +359,12 @@ body {
   gap: 0.9375rem;
   width: 100vw;
   overflow-x: scroll;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: x mandatory;
   -ms-overflow-style: none;
+  scrollbar-width: none;
   transition: transform 250ms ease-in;
   margin-block: 2rem 2rem;
+  padding-inline: 3rem 3rem;
 }
 @media (min-width: calc(70em + 1px)) {
   .slider {
@@ -376,17 +376,23 @@ body {
     margin-block: 3.5rem 3.5rem;
   }
 }
+@media (min-width: calc(70em + 1px)) {
+  .slider {
+    padding-inline: 3rem 3rem;
+  }
+}
+@media (min-width: 48em) and (max-width: 70em) {
+  .slider {
+    padding-inline: 3rem 3rem;
+  }
+}
 .slider::-webkit-scrollbar {
   display: none;
 }
 .slider__card {
-  list-style: none;
   scroll-snap-align: center;
-}
-.slider__card > img {
   border-radius: 5px;
-  min-width: 72vw;
-  min-height: 31vw;
+  max-width: 72vw;
 }
 
 .footer {
