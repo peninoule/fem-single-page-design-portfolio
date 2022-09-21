@@ -328,12 +328,12 @@ body {
 }
 @media (min-width: calc(70em + 1px)) {
   .cta--dark {
-    margin-block: 7.5rem 4rem;
+    margin-block: 5.5rem 3.5rem;
   }
 }
 @media (min-width: 48em) and (max-width: 70em) {
   .cta--dark {
-    margin-block: 7.5rem 4rem;
+    margin-block: 7.5rem 3.5rem;
   }
 }
 @media (min-width: calc(70em + 1px)) {
