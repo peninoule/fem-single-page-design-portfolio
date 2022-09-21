@@ -17,7 +17,7 @@
         $tab-top: 3.5rem, $tab-bottom: 3.5rem);
     @include u.pm-inline (padding,
         $left: 3rem);
-        
+
     // disable scrolling bar
     &::-webkit-scrollbar {
         display: none;
