@@ -66,7 +66,7 @@
             $desk-top: 5.5rem);
         @include u.pm-block(padding,
             $top: 3rem,
-            $desk-top: 5rem, $desk-bottom: 5rem);
+            $desk-top: 5rem, $desk-bottom: 3.5rem);
         @include u.desktop {
             flex-direction: row;
             justify-content: space-around;
